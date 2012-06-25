@@ -108,17 +108,19 @@
     [onView removeFromSuperview];
     
     _onView = onView;
-    [self addSubview:onView];
+    _onView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    [self addSubview:_onView];
 
     [self updateSelectionViewPositions];
 }
 
 - (void)setOffView:(UIView *)offView {
     [_offView removeFromSuperview];
-    [_offView removeFromSuperview];
+    [offView removeFromSuperview];
     
     _offView = offView;
-    [self addSubview:offView];
+    _offView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+    [self addSubview:_offView];
     
     [self updateSelectionViewPositions];
 }
